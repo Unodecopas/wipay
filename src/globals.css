@@ -72,7 +72,7 @@ h3 {
 nav {
   width: 100%;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 10px 10px 0px 0px;
   box-shadow: 0px 0px 12px 0px rgb(0 0 0 / 10%);
   z-index: 2;
 }
@@ -265,7 +265,7 @@ form input {
   height: 100%;
   display: flex;
   padding: 2rem 1rem;
-  border-radius: 10px;
+  border-radius: 0px 0px 10px 10px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
