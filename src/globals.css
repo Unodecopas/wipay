@@ -147,6 +147,18 @@ nav ul li:hover {
   background-color: #f8d7da;
   color: #721c24;
 }
+.pagination__buttons__fixed,
+.pagination__buttons__page {
+  border: 1px solid transparent;
+}
+.pagination__buttons__fixed:hover {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+.pagination__buttons__page__active {
+  background-color: var(--red);
+  color: white;
+}
 .btn__success {
   border: 1px solid transparent;
   color: #135846;
