@@ -39,6 +39,13 @@ Se valorará positivamente el uso de librerías como:
 - Se valorará positivamente el uso de paginación para el listado de usuarios,aunque no es obligatorio.
 - Se valorará positivamente el uso de un código limpio
 
+# EXTRAS
+
+Se ha añadido un buscador para filtar la lista de usuarios en función del email
+Se ha añadido un select que permite ordenar la lista en función de los parámetros. Tanto por orden ascendente como decreciente
+Se ha añadido un sistema de paginación propio para la lista de usuarios
+Se ha adoptado un estilo visual basado en la web de la compañia
+
 ## Available Scripts
 
 In the project directory, you can run:

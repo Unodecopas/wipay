@@ -40,7 +40,7 @@ const UsersPage = () => {
   return (
     <div className='container__table'>
       <div className='switcher'>
-        <input type="text" value={searchTerm} onChange={e => setSearchTerm(e.target.value)} autoComplete='off'/>
+        <input type="text" value={searchTerm} onChange={e => setSearchTerm(e.target.value)} autoComplete='off' placeholder='Search Email ...'/>
         <button onClick={() => createUser()}>Add User</button>
         <Selector
           options={[
