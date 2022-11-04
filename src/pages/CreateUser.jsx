@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import Form from '../components/Form'
 import { useUsers } from '../context/UsersContext'
 
 const CreateUser = () => {
   const { users, dispatch } = useUsers()
   const [message, setMessage] = useState({ type: '', message: '' })
+  const navigate = useNavigate()
 
   const createUser = (email, password) => {
     if (users.find(user => user.email === email)) {
@@ -14,10 +16,9 @@ const CreateUser = () => {
       }, 3000)
     } else {
       dispatch({ type: 'added', email, password })
-      setMessage({ type: 'success', message: 'User created succesfully' })
       setTimeout(() => {
-        setMessage({ type: '', message: '' })
-      }, 3000)
+        navigate('/users')
+      }, 1000)
     }
   }
 
