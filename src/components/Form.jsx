@@ -46,7 +46,7 @@ const Form = ({ onSubmit, user }) => {
       </label>
       <div className='form__btns'>
         {user && <DeleteBtn user={user.id}/>}
-        <button className='btn__success'>Done</button>
+        <button className='btn__success' type='submit'>Done</button>
       </div>
       {error.email && <p className='error'>{error.email}</p>}
       {error.password && <p className='error'>{error.password}</p>}
