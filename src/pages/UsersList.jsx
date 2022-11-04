@@ -10,13 +10,15 @@ const UsersPage = () => {
   const { users } = useUsers()
   const navigate = useNavigate()
   const [usersState, setUsersState] = useState([])
+  const [searchTerm, setSearchTerm] = useState('')
   const [showUsers, setShowUsers] = useState([])
   const [orderBy, setOrderBy] = useState('id')
 
   useEffect(() => {
-    const orderedUsers = orderState(users, orderBy)
+    const searchFiltered = users.filter(user => user.email.toLowerCase().includes(searchTerm.toLowerCase()))
+    const orderedUsers = orderState(searchFiltered, orderBy)
     setUsersState(orderedUsers)
-  }, [users, orderBy])
+  }, [users, orderBy, searchTerm])
 
   const createUser = () => {
     navigate('/users/create')
@@ -36,8 +38,9 @@ const UsersPage = () => {
     setOrderBy(value)
   }
   return (
-    <div className='container'>
+    <div className='container__table'>
       <div className='switcher'>
+        <input type="text" value={searchTerm} onChange={e => setSearchTerm(e.target.value)} autoComplete='off'/>
         <button onClick={() => createUser()}>Add User</button>
         <Selector
           options={[
@@ -54,7 +57,7 @@ const UsersPage = () => {
         ? <Table items={showUsers} navigateItem={navigateUser} navigateEditItem={navigateEditUser}/>
         : <p> Nothing to show </p>
       }
-      <Pagination items={usersState} itemsPerPage={10} setItems={handleUsers} />
+      <Pagination items={usersState} itemsPerPage={8} setItems={handleUsers} />
     </div>
   )
 }

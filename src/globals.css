@@ -75,14 +75,26 @@ nav {
   border-radius: 10px 10px 0px 0px;
   box-shadow: 0px 0px 12px 0px rgb(0 0 0 / 10%);
   z-index: 2;
+  display: flex;
+  box-shadow: 3px 3px 10px #ccc;
+  padding: 1rem 3rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.img__container {
+  display: flex;
+  justify-content: flex-start;
+}
+nav img {
+  height: 40px;
 }
 nav ul {
   display: flex;
   flex-direction: row;
   gap: 3rem;
-  justify-content: center;
-  padding: 1rem 0;
-  box-shadow: 3px 3px 10px #ccc;
+  flex-grow: 1;
+  padding: 0 4rem;
+  justify-content: flex-start;
 }
 nav ul li {
   border-radius: 10px;
@@ -178,6 +190,10 @@ nav ul li:hover {
   gap: 2rem;
   justify-content: flex-end;
 }
+.switcher input {
+  border-radius: 10px;
+  padding: 0 1rem;
+}
 select {
   border-radius: 10px;
   padding: 0.5rem 1rem;
@@ -187,6 +203,7 @@ table {
   border-collapse: collapse;
   margin-top: 2rem;
   width: 100%;
+  min-width: 100%;
   text-align: center;
 }
 table tbody tr {
@@ -273,6 +290,18 @@ form input {
   background-image: url("./img/fondo-web-opacidad.png");
   background-repeat: repeat;
 }
+.container__table {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding: 2rem 1rem;
+  border-radius: 0px 0px 10px 10px;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  background-image: url("./img/fondo-web-opacidad.png");
+  background-repeat: repeat;
+}
 .count {
   text-align: center;
   margin-top: 1rem;
@@ -292,8 +321,10 @@ form input {
   width: 100%;
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 .password__input button {
+  padding: 1rem;
   border: 1px solid transparent;
 }
 
