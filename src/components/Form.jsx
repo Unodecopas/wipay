@@ -26,6 +26,9 @@ const Form = ({ onSubmit, user }) => {
         ...error,
         password: 'Password must have 8 characteres, 1 symbol, 1 lowerCase, 1 UpperCase '
       })
+      setTimeout(() => {
+        setError({ error: '', password: '' })
+      }, 2000)
     }
     if (validator.isEmail(email) && validator.isStrongPassword(password)) {
       onSubmit(email, password)
