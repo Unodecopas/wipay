@@ -1,6 +1,43 @@
-# Getting Started with Create React App
+# PREVIEW
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Preview](https://helpful-cajeta-3a7500.netlify.app/)
+
+# DESCRIPTION
+
+Se deberá desarrollar un panel de administración de usuarios que contemple las operaciones
+básicas de tipo CRUD (Create, Read, Update, Delete). Dicho panel de administración debe
+contener las siguientes funcionalidades:
+
+- 1. Una pantalla inicial donde se muestre el número total de usuarios actuales.
+- 2. Una pantalla para visualizar el listado de usuarios.
+- 3. Una pantalla para visualizar los datos de un usuario.
+- 4. Una pantalla para editar los datos de un usuario.
+- 5. Un botón de acción para eliminar el usuario.
+  - a. Dicho botón debe preguntar si se está seguro antes de eliminar el usuario.
+  - b. Dicho botón debe aparecer en el listado de usuarios, en la vista de detalles de usuario y en la vista de edición de usuario.
+
+Un usuario contiene los siguientes atributos junto a sus validaciones:
+
+- 1. Un correo electrónico:
+  - a. De tipo String.
+  - b. Debe comprobarse que sea un correo electrónico válido.
+- 2. Una contraseña:
+  - a. De tipo String.
+  - b. Debe tener entre 6 y 12 caracteres de longitud.
+- 3. Una fecha de creación:
+  - a. De tipo Date.
+- 4. Una fecha de última actualización:
+  - a. De tipo Date.
+  - b. Este valor debe actualizarse cada vez que se actualice un usuario.
+  - c. Por defecto, tiene el mismo valor que la fecha de creación.
+
+Se valorará positivamente el uso de librerías como:
+
+- 1. lodash
+- 2. react-router-dom
+- 3. validator
+- Se valorará positivamente el uso de paginación para el listado de usuarios,aunque no es obligatorio.
+- Se valorará positivamente el uso de un código limpio
 
 ## Available Scripts
 
