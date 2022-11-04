@@ -330,8 +330,8 @@ form input {
 
 .user__details {
   width: 100%;
-  max-width: 300px;
-  display: grid;
+  justify-content: center;
+  gap: 2rem;
+  display: flex;
   text-align: left;
-  grid-template-columns: repeat(2, 1fr);
 }
