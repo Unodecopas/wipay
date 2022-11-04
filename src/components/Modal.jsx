@@ -2,7 +2,7 @@ const Modal = ({ visible, deleteUser, handleClose }) => {
   return (
     <div className={`modal-container ${visible ? 'visible' : ''}`}>
       <div className="modal">
-        <p>Estas seguro de que deseas borrar el usuario ?</p>
+        <p>Are you sure you want to delete the user?</p>
         <div className="modal__btns">
           <button onClick={handleClose}>Cancel</button>
           <button onClick={deleteUser} className='btn__delete'>Confirm</button>
