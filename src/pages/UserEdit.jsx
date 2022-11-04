@@ -19,9 +19,7 @@ const UserEdit = () => {
   return (
     <div className='container'>
       <h2>Edit User</h2>
-      {user &&
-        <Form onSubmit={updateUser} user={user}/>
-      }
+      {user && <Form onSubmit={updateUser} user={user}/> }
     </div>
   )
 }

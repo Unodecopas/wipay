@@ -1,10 +1,5 @@
 import { createContext, useContext, useReducer } from 'react'
 import { initialData } from '../data/initialData'
-// const initialUsers = [
-//   { id: 1, email: 'Larue_Rau85@yahoo.com', password: '123456a', createdAt: '2022-01-03', updatedAt: '2022-03-01' },
-//   { id: 2, email: 'Kassandra4@hotmail.com', password: '12345b', createdAt: '2022-04-12', updatedAt: '2022-04-12' },
-//   { id: 3, email: 'Jeanne63@yahoo.com', password: '123456c', createdAt: '2022-05-03', updatedAt: '2022-06-01' }
-// ]
 
 const UsersContext = createContext(null)
 

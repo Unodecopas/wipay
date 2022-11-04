@@ -39,14 +39,17 @@ const UsersPage = () => {
     <div className='container'>
       <div className='switcher'>
         <button onClick={() => createUser()}>Add User</button>
-        <Selector options={[
-          { label: 'id', value: 'id' },
-          { label: 'Email', value: 'email' },
-          { label: 'Created At', value: 'createdAt' },
-          { label: 'Updated At', value: 'updatedAt' }
-        ]} onChange={handleOrder}
-            />
+        <Selector
+          options={[
+            { label: 'id', value: 'id' },
+            { label: 'Email', value: 'email' },
+            { label: 'Created At', value: 'createdAt' },
+            { label: 'Updated At', value: 'updatedAt' }
+          ]}
+          onChange={handleOrder}
+        />
       </div>
+
       {users
         ? <Table items={showUsers} navigateItem={navigateUser} navigateEditItem={navigateEditUser}/>
         : <p> Nothing to show </p>

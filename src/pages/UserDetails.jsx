@@ -27,11 +27,11 @@ const UserDetails = () => {
             <p>Updated At: </p>
           </div>
           <div>
-          <p>{user.id}</p>
-          <p>{user.email}</p>
-          <p>{user.password}</p>
-          <p>{user.createdAt}</p>
-          <p>{user.updatedAt}</p>
+            <p>{user.id}</p>
+            <p>{user.email}</p>
+            <p>{user.password}</p>
+            <p>{user.createdAt}</p>
+            <p>{user.updatedAt}</p>
           </div>
         </div>
         <div className='form__btns'>
