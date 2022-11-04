@@ -36,6 +36,7 @@ a:visited {
 }
 a:hover {
   text-decoration: underline;
+  transform: scale(1.1);
 }
 a.active {
   text-decoration: underline;
@@ -286,6 +287,10 @@ form input {
   border-radius: 10px;
   padding: 2rem;
   box-shadow: 3px 3px 10px #ccc;
+}
+.count a:hover {
+  text-decoration: none;
+  transform: scale(1.2);
 }
 .password__input {
   width: 100%;
