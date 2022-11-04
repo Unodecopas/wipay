@@ -19,7 +19,7 @@ const DeleteBtn = ({ user }) => {
 
   return (
     <>
-      <button onClick={() => setShowModal(true)} className='btn__delete'>Delete</button>
+      <button onClick={() => setShowModal(true)} className='btn__delete' type='button'>Delete</button>
        {showModal &&
         <Modal
         visible={showModal}

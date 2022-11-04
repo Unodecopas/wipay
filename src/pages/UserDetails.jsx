@@ -17,16 +17,27 @@ const UserDetails = () => {
     <div className='container'>
       <h2>User Details</h2>
       {user &&
-        <>
-          <p>ID: {user.id}</p>
-          <p>Email: {user.email}</p>
-          <p>Password: {user.password}</p>
-          <p>Created At: {user.createdAt}</p>
-          <p>Last updated{user.updatedAt}</p>
-           <div className='form__btns'>
-            <button onClick={() => navigate(`/users/${user.id}/edit`)}>Edit</button>
-            <DeleteBtn user={user.id}/>
+      <>
+        <div className='user__details'>
+          <div>
+            <p>ID:</p>
+            <p>Email:</p>
+            <p>Password:</p>
+            <p>Created At: </p>
+            <p>Updated At: </p>
           </div>
+          <div>
+          <p>{user.id}</p>
+          <p>{user.email}</p>
+          <p>{user.password}</p>
+          <p>{user.createdAt}</p>
+          <p>{user.updatedAt}</p>
+          </div>
+        </div>
+        <div className='form__btns'>
+          <button onClick={() => navigate(`/users/${user.id}/edit`)}>Edit</button>
+          <DeleteBtn user={user.id}/>
+        </div>
         </>
       }
     </div>

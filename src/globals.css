@@ -115,6 +115,7 @@ nav ul li:hover {
   width: 100vw;
   background-color: rgba(0, 0, 0, 0.5);
   visibility: hidden;
+  z-index: 3;
 }
 
 .modal-container.visible {
@@ -245,6 +246,7 @@ form input {
   width: 100%;
   justify-content: center;
   gap: 1rem;
+  max-width: 300px;
 }
 .form__btns button {
   width: 100%;
@@ -284,4 +286,20 @@ form input {
   border-radius: 10px;
   padding: 2rem;
   box-shadow: 3px 3px 10px #ccc;
+}
+.password__input {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.password__input button {
+  border: 1px solid transparent;
+}
+
+.user__details {
+  width: 100%;
+  max-width: 300px;
+  display: grid;
+  text-align: left;
+  grid-template-columns: repeat(2, 1fr);
 }

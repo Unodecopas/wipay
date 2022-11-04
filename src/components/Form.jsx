@@ -7,6 +7,8 @@ const Form = ({ onSubmit, user }) => {
   const [password, setPassword] = useState('')
   const [error, setError] = useState({ email: '', password: '' })
   const [message, setMessage] = useState('')
+  const [showPassword, setShowPassword] = useState(false)
+
   useEffect(() => {
     if (user) {
       setEmail(user.email)
@@ -32,24 +34,28 @@ const Form = ({ onSubmit, user }) => {
     }
     if (validator.isEmail(email) && validator.isStrongPassword(password)) {
       onSubmit(email, password)
-      setMessage('User edited succesfully')
+      setMessage(user ? 'User succesfully edited' : 'User succesfully added')
       setTimeout(() => {
         setMessage('')
       }, 2000)
     }
   }
+  const togglePassword = () => {
+    setShowPassword(!showPassword)
+  }
 
   return (
-    <form onSubmit={handleForm}>
+    <form>
       <label htmlFor="email">
         <input type="email" name="email" id="email" placeholder='email' value={email} onChange={e => setEmail(e.target.value)}/>
       </label>
-      <label htmlFor="password">
-        <input type="password" name="password" id="password" placeholder='password' value={password} onChange={e => setPassword(e.target.value)}/>
-      </label>
+      <div className='password__input'>
+        <input type={showPassword ? 'text' : 'password'} placeholder='password' value={password} onChange={e => setPassword(e.target.value)}/>
+        <button onClick={togglePassword} type='button'>👁‍🗨</button>
+      </div>
       <div className='form__btns'>
         {user && <DeleteBtn user={user.id}/>}
-        <button className='btn__success' type='submit'>Done</button>
+        <button className='btn__success' type='submit' onClick={(e) => handleForm(e)}>Done</button>
       </div>
       {error.email && <p className='error'>{error.email}</p>}
       {error.password && <p className='error'>{error.password}</p>}
