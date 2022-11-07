@@ -21,7 +21,7 @@ const UsersPage = () => {
   }, [users, orderBy, searchTerm])
 
   const createUser = () => {
-    navigate('/users/create')
+    navigate('/create')
   }
 
   const navigateUser = (e, id) => {
