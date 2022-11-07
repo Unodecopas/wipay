@@ -23,15 +23,15 @@ const DeleteBtn = ({ user }) => {
         onClick={() => setShowModal(true)}
         className='btn__delete'
         type='button'
-        >Delete</button>
+      >Delete
+      </button>
 
-       {showModal &&
+      {showModal &&
         <Modal
-        visible={showModal}
-        handleClose={closeModal}
-        deleteUser={deleteUser}
-        />
-      }
+          visible={showModal}
+          handleClose={closeModal}
+          deleteUser={deleteUser}
+        />}
     </>
   )
 }

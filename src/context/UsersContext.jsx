@@ -8,7 +8,7 @@ export function UsersProvider ({ children }) {
 
   return (
     <UsersContext.Provider value={{ users, dispatch }}>
-        {children}
+      {children}
     </UsersContext.Provider>
   )
 }
