@@ -26,7 +26,7 @@ const Form = ({ onSubmit, user }) => {
     if (!validator.isStrongPassword(password, { minLength: 6, minSymbols: 0, minLowercase: 0, minUppercase: 0 })) {
       setError({
         ...error,
-        password: 'Password must have 8 characteres, 1 symbol, 1 lowerCase, 1 UpperCase '
+        password: 'Password must at least 6 characters'
       })
       setTimeout(() => {
         setError({ error: '', password: '' })
