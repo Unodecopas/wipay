@@ -37,6 +37,9 @@ a:visited {
 a:hover {
   transform: scale(1.1);
 }
+a.active {
+  color: var(--red);
+}
 
 button {
   border-radius: 10px;
@@ -208,6 +211,7 @@ table {
 }
 table tbody tr {
   border-bottom: 2px solid grey;
+  cursor: pointer;
 }
 td button {
   margin: 0 0.5rem;

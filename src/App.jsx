@@ -13,10 +13,10 @@ function App () {
       <main>
         <Routes>
           <Route path='/' element={<HomePage />} />
-          <Route path='/users' element={<UsersList />}/>
-          <Route path='/users/create' element={<CreateUser />}/>
-          <Route path='/users/:id' element={<UserDetails />}/>
-          <Route path='/users/:id/edit' element={<UserEdit/>}/>
+          <Route path='/users' element={<UsersList />} />
+          <Route path='/users/:id' element={<UserDetails />} />
+          <Route path='/users/:id/edit' element={<UserEdit />} />
+          <Route path='/create' element={<CreateUser />} />
         </Routes>
       </main>
     </div>

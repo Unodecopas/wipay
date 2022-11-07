@@ -24,10 +24,12 @@ const UsersPage = () => {
     navigate('/users/create')
   }
 
-  const navigateUser = (id) => {
+  const navigateUser = (e, id) => {
+    e.stopPropagation()
     navigate(`/users/${id}`)
   }
-  const navigateEditUser = (id) => {
+  const navigateEditUser = (e, id) => {
+    e.stopPropagation()
     navigate(`/users/${id}/edit`)
   }
 
@@ -40,7 +42,7 @@ const UsersPage = () => {
   return (
     <div className='container__table'>
       <div className='switcher'>
-        <input type="text" value={searchTerm} onChange={e => setSearchTerm(e.target.value)} autoComplete='off' placeholder='Search Email ...'/>
+        <input type='text' value={searchTerm} onChange={e => setSearchTerm(e.target.value)} autoComplete='off' placeholder='Search Email ...' />
         <button onClick={() => createUser()}>Add User</button>
         <Selector
           options={[
@@ -54,9 +56,8 @@ const UsersPage = () => {
       </div>
 
       {users
-        ? <Table items={showUsers} navigateItem={navigateUser} navigateEditItem={navigateEditUser}/>
-        : <p> Nothing to show </p>
-      }
+        ? <Table items={showUsers} navigateItem={navigateUser} navigateEditItem={navigateEditUser} />
+        : <p> Nothing to show </p>}
       <Pagination items={usersState} itemsPerPage={8} setItems={handleUsers} />
     </div>
   )

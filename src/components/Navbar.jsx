@@ -3,16 +3,16 @@ import { NavLink } from 'react-router-dom'
 import logo from '../img/logo.png'
 const Navbar = () => {
   return (
-     <nav>
+    <nav>
       <div className='img__container'>
-        <img src={logo} alt="" />
+        <img src={logo} alt='' />
       </div>
-        <ul>
-          <li><NavLink to='/'>Home</NavLink></li>
-          <li><NavLink to='/users'>Users</NavLink></li>
-          <li><NavLink to='/users/create'>Add User</NavLink></li>
-        </ul>
-      </nav>
+      <ul>
+        <li><NavLink to='/'>Home</NavLink></li>
+        <li><NavLink to='/users'>Users</NavLink></li>
+        <li><NavLink to='/create'>Add User</NavLink></li>
+      </ul>
+    </nav>
   )
 }
 

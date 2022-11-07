@@ -23,7 +23,7 @@ const Form = ({ onSubmit, user }) => {
   const handleForm = (e) => {
     e.preventDefault()
     if (!validator.isEmail(email)) setError({ ...error, email: 'Incorrect email format (someone@example.com)' })
-    if (!validator.isStrongPassword(password)) {
+    if (!validator.isStrongPassword(password, { minLength: 6, minSymbols: 0, minLowercase: 0, minUppercase: 0 })) {
       setError({
         ...error,
         password: 'Password must have 8 characteres, 1 symbol, 1 lowerCase, 1 UpperCase '
@@ -32,7 +32,7 @@ const Form = ({ onSubmit, user }) => {
         setError({ error: '', password: '' })
       }, 2000)
     }
-    if (validator.isEmail(email) && validator.isStrongPassword(password)) {
+    if (validator.isEmail(email) && validator.isStrongPassword(password, { minLength: 6, minSymbols: 0, minLowercase: 0, minUppercase: 0 })) {
       onSubmit(email, password)
       setMessage(user ? 'User succesfully edited' : 'User succesfully added')
       setTimeout(() => {
@@ -46,15 +46,15 @@ const Form = ({ onSubmit, user }) => {
 
   return (
     <form>
-      <label htmlFor="email">
-        <input type="email" name="email" id="email" placeholder='email' value={email} onChange={e => setEmail(e.target.value)}/>
+      <label htmlFor='email'>
+        <input type='email' name='email' id='email' placeholder='email' value={email} onChange={e => setEmail(e.target.value)} />
       </label>
       <div className='password__input'>
-        <input type={showPassword ? 'text' : 'password'} placeholder='password' value={password} onChange={e => setPassword(e.target.value)}/>
+        <input type={showPassword ? 'text' : 'password'} placeholder='password' value={password} onChange={e => setPassword(e.target.value)} />
         <button onClick={togglePassword} type='button'>👁‍🗨</button>
       </div>
       <div className='form__btns'>
-        {user && <DeleteBtn user={user.id}/>}
+        {user && <DeleteBtn user={user.id} />}
         <button className='btn__success' type='submit' onClick={(e) => handleForm(e)}>Done</button>
       </div>
       {error.email && <p className='error'>{error.email}</p>}

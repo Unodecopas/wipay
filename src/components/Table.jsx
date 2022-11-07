@@ -17,15 +17,15 @@ const Table = ({ items, navigateItem, navigateEditItem }) => {
       <tbody>
         {items && items.map(item => {
           return (
-            <tr key={item.id}>
+            <tr key={item.id} onClick={(e) => navigateItem(e, item.id)}>
               <td>{item.id}</td>
-              <td onClick={() => navigateItem(item.id)} className='link'>{item.email}</td>
+              <td>{item.email}</td>
               <td>{item.password}</td>
               <td>{item.createdAt}</td>
               <td>{item.createdAt}</td>
               <td>
-                <button onClick={() => navigateEditItem(item.id)}>Edit</button>
-                <DeleteBtn user={item.id}/>
+                <button onClick={(e) => navigateEditItem(e, item.id)}>Edit</button>
+                <DeleteBtn user={item.id} />
               </td>
             </tr>
           )

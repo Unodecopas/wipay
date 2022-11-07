@@ -17,7 +17,7 @@ const CreateUser = () => {
     } else {
       dispatch({ type: 'added', email, password })
       setTimeout(() => {
-        navigate('/users')
+        navigate(`/users/${users.length + 1}`)
       }, 1000)
     }
   }
@@ -25,7 +25,7 @@ const CreateUser = () => {
   return (
     <div className='container'>
       <h2>Create User</h2>
-      <Form onSubmit={createUser}/>
+      <Form onSubmit={createUser} />
       {message && <p className={message.type}>{message.message}</p>}
     </div>
   )
